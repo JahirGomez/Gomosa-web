@@ -1,0 +1,15 @@
+options +FollowSymLinks
+
+<ifmodule mod_rewrite.c>
+	RewriteEngine On
+
+	#Si la url solicitada no es un archivo(existente), continuar...
+	#RewriteCond %{REQUEST_FILENAME} !-f
+
+	#Si la url solicitada no es una carpeta(existente), continuar...
+	#RewriteCond %{REQUEST_FILENAME} !-d
+
+	#se toma todo ese -query_string- y se pasa como parametro ruta
+	RewriteRule ^(.*)$ index.php?ruta=$1 [L,QSA]
+
+</ifmodule>
