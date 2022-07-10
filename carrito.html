@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Authors:" content="Jahir Gómez, Isaac Ehuan">
+
+    <title>Carrito</title>
+
+    <meta name="description" content="Somos una empresa dedicada a la confección de Uniformes para tu empresa, con calidad en la confección así como en el servicio">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+
+    <script language="javascript">
+
+        var item_name = new Array();
+        item_name[0] = "-----";
+        item_name[1] = "Gorras";
+        item_name[2] = "Guayaberas";
+        item_name[3] = "Batas";
+        item_name[4] = "Tazas";
+        item_name[5] = "Termos de Vinil";
+        item_name[6] = "Termos Sublimados";
+        item_name[7] = "Corte de Vinil";
+        item_name[8] = "Lonas";
+        item_name[9] = "Láminas";
+        
+        var item_price = new Array();
+        item_price[0] = 12.00;
+        item_price[1] = 25.00;
+        item_price[2] = 20.00;
+        item_price[3] = 10.00;
+        item_price[4] = 15.00;
+        item_price[5] = 12.50;
+        item_price[6] = 20.00;
+        item_price[7] = 10.00;
+        item_price[8] = 15.00;
+        item_price[9] = 12.50;
+        
+        var shipping = new Array();
+        shipping[0] = 2.00;
+        shipping[1] = 3.00;
+        shipping[2] = 2.80;
+        shipping[3] = 5.00;
+        shipping[4] = 6.00;
+        shipping[5] = 1.00;
+        shipping[6] = 2.80;
+        shipping[7] = 5.00;
+        shipping[8] = 6.00;
+        shipping[9] = 1.00;
+        
+        var item_number = new Array();
+        
+        if (document.cookie && document.cookie != ""){process_cookie()}
+        
+        function process_cookie(){
+            var whole_cookie = unescape(document.cookie);
+            var drop_name = whole_cookie.split("=");
+            if (drop_name[1] != ""){
+                item_number = drop_name[1].split("xxx");
+            }
+        }
+        
+        function kill_cookies(){
+            var kill_date = new Date("January 1, 1970");
+            document.cookie = "stuff=stub;expires=" + kill_date.toGMTString();
+            window.location = "pagina2.htm";
+        }
+        
+        function remove(){
+            var new_cookie_raw_data = "drop this";
+            if (document.orderform.orderboxes){
+                for (i = 0; i < document.orderform.orderboxes.length; i++){
+                    if (document.orderform.orderboxes[i].checked == false){
+                        new_cookie_raw_data = new_cookie_raw_data + document.orderform.orderboxes[i].value + "xxx";
+                    }
+                }
+            }
+        
+            var drop_initialization = new_cookie_raw_data.split("drop this");
+        
+            if (drop_initialization[1] == ""){
+                kill_cookies()
+            }
+        
+            if (drop_initialization[1] != ""){
+                var clean_data = drop_initialization[1];
+                document.cookie = "stuff=" + escape(clean_data);
+            }
+        
+            window.location = "pagina2.htm";
+        }
+        
+        
+        </script>
+
+  </head>
+
+  <header>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-header">
+					<table>
+						<tr>
+							<td>
+								<img alt="Logo gomosa" src="img/logo.jpg" width="15%" height="15%">
+							</td>
+							<td>
+								<h1>GOMOSA</h1>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+  </header>
+  	<body>
+		<div class="row">
+			<div class="col-md-12">
+				<ul class="nav nav-pills">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Inicio</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="ropa.html">Ropa</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="otros.html">Otros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="carteles.html">Carteles</a>
+					</li>
+                    <li class="nav-item">
+						<a class="nav-link active" href="carrito.html">Carrito</a>
+					</li>
+					<li class="nav-item dropdown ml-md-auto">
+						 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Más opciones</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+							 <a class="dropdown-item" href="iniciarSesion.html">Iniciar Sesión</a> <a class="dropdown-item" href="#">Configuración</a> <a class="dropdown-item" href="/carrito.html">Carrito de compras</a>
+							<div class="dropdown-divider">
+							</div> <a class="dropdown-item" href="#">Cerrar Sesión</a>
+						</div>
+					</li>
+				</ul>
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-md-12" align="center">
+						<h4>Esta es la lista de productos que has ordenado. Para elimina los elementos marcalos y haz clic al boton de remover.</h4>
+                        <p>
+                        <form name="orderform">
+                        <script language="JavaScript">
+
+                        if (item_number.length < 1){
+                            document.write("<h4>No hay elementos en el carrito. Agrega algunos utilizando el enlace</h4>");
+                        }
+                        else{
+                            var total = 0;
+
+                            for (i = 0; i < item_number.length - 1; i++){
+                                document.write ("<input type=\"checkbox\" name=\"orderboxes\"");
+                                document.write("value=\"" + item_number[i] + "\">");
+                                document.write("<b>" + item_name[item_number[i]] + "</b> &nbsp;&nbsp;");
+                                document.write("<i>precio: $" + item_price[item_number[i]] + "</i> &nbsp;&nbsp");
+                                document.write("env�o: $" + shipping[item_number[i]] + "<br><br>");
+                                total = total + item_price[item_number[i]] + shipping[item_number[i]];
+                            }
+                            document.write("Total - $" + total);
+                        }
+
+                        </script>
+                        <br><br><input type="button" onclick="remove()" value="Eliminar"></p></form><p><a class="btn btn-primary" 
+                        href="index.html" role="button">Agregar productos</a>&nbsp;&nbsp;<a class="btn btn-primary" href="javascript:kill_cookies()" role="button">Vaciar carrito</a> 
+                        <br>
+                        <br>
+					</div>
+				</div>
+				<br>
+			</div>
+		</div>
+		<br>
+    	<script src="js/jquery.min.js"></script>
+    	<script src="js/bootstrap.min.js"></script>
+    	<script src="js/scripts.js"></script>
+  	</body>
+
+  	<footer>
+		<div class="row">
+			<div class="col-md-12 ">
+				<h3>
+					Contáctanos:
+				</h3>
+				<div class="row">
+					<div class="col-md-3">
+
+						<address>
+							<abbr title="TELÉFONO"><strong>TEL:</strong> 99-93-22-76-11
+						</address>
+
+						<address>
+							<abbr title="WhatsApp"><strong>WA:</strong><br></abbr> <a href="https://wa.link/v6xavj">Chat de WhatsApp</a>
+						</address>
+					</div>
+					<div class="col-md-3">
+
+						<address>
+							<abbr title="Facebook"><strong>FB:</strong><br></abbr> <a href="https://www.facebook.com/GomosaUniformes">@GOMOSA UNIFORMES</a>
+						</address>
+					</div>
+					<div class="col-md-3">
+
+						<address>
+							<abbr title="Instagram"><strong>IG:</strong><br></abbr> <a href="https://www.instagram.com/gomosauniformes/">@gomosauniformes</a>
+						</address>
+					</div>
+					<div class="col-md-3">
+
+						<address>
+							<abbr title="Mail"><strong>Correo:</strong><br></abbr> <a href="mailto:gomosa.merida@hotmail.com">gomosa.merida@hotmail.com</a>
+						</address>
+					</div>
+				</div>
+				<p align="center">
+					&copy todos los derechos reservados.
+				</p>
+			</div>
+		</div>
+  	</footer>
+</html>
