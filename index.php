@@ -45,15 +45,18 @@
 						<a class="nav-link active" href="index.html">Inicio</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="servicios.html">Servicios</a>
+						<a class="nav-link" href="ropa.html">Ropa</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="productos.html">Productos</a>
+						<a class="nav-link" href="otros.html">Otros</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="carteles.html">Carteles</a>
 					</li>
 					<li class="nav-item dropdown ml-md-auto">
 						 <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown">Más opciones</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-							 <a class="dropdown-item" href="#">Iniciar Sesión</a> <a class="dropdown-item" href="#">Configuración</a> <a class="dropdown-item" href="#">Carrito de compras</a>
+							 <a class="dropdown-item" href="iniciarSesion.php">Iniciar Sesión</a> <a class="dropdown-item" href="#">Configuración</a> <a class="dropdown-item" href="carrito.html">Carrito de compras</a>
 							<div class="dropdown-divider">
 							</div> <a class="dropdown-item" href="#">Cerrar Sesión</a>
 						</div>
@@ -80,17 +83,48 @@
 						</div>
 					</div> <a class="carousel-control-prev" href="#carousel-431165" data-slide="prev"><span class="carousel-control-prev-icon"></span> <span class="sr-only">Previous</span></a> <a class="carousel-control-next" href="#carousel-431165" data-slide="next"><span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span></a>
 				</div>
+				<br>
 				<p align="center">
 					Somos una empresa dedicada a la confección de Uniformes para tu empresa (batas, mandiles, playeras, serigrafía y bordado), con calidad en la confección así como en el servicio. <br>
 					Cotiza tus uniformes sin compromiso.
 				</p>
+				<br>
+				<!--<div class="row">
+					<div class="col-md-12">
+						<h2> Categorías:</h2>
+					</div>
+					<div class="col-md-4">
+						<h4 align="center">
+							Ropa
+						</h4>
+						<!--<img clas="img-fluid" alt="ropa" src="img/GM_ropa.jpg">
+					</div>
+					<div class="col-md-4">
+						<h4 align="center">
+							Artículos
+						</h4>
+						<p>
+							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+						</p>
+					</div>
+						<div class="col-md-4">
+							<h4 align="center">
+								Carteles
+							</h4>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+						</div>
+					</div>
+				</div>
+				<br>-->
 				<div class="row">
 					<div class="col-md-4">
 						<h2 align="center">
 							Historia
 						</h2>
 						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							Somos una empresa que nación en el año 2000, con iniciativa de nuestros fundadores Oracio Gómez Pérez y Rosy Morales Burgos.
 						</p>
 					</div>
 					<div class="col-md-4">
@@ -98,7 +132,7 @@
 							Misión
 						</h2>
 						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							Entregar productos y servicios de calidad con a los clientes para que queden satisfechos de la mejor manera posible.
 						</p>
 					</div>
 						<div class="col-md-4">
@@ -106,14 +140,14 @@
 								Visión
 							</h2>
 							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+								Ser líderes en ventas de imprenta, confección y serigrafia a nivel penínsular.
 							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
+		<br>
     	<script src="js/jquery.min.js"></script>
     	<script src="js/bootstrap.min.js"></script>
     	<script src="js/scripts.js"></script>
